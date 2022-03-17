@@ -1,3 +1,4 @@
+// 当前依赖下的事件响应
 let activeEffect: ReactiveEffect
 
 class ReactiveEffect {
@@ -42,6 +43,11 @@ export const track = (
   dep.add(activeEffect)
 }
 
+/**
+ * 依赖作用触发
+ * @param target - 目标对象
+ * @param key - 目标对象字段
+ */
 export const trigger = (
   target: Record<string | symbol, any>,
   key: string | symbol
